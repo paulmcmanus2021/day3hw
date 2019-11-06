@@ -1,22 +1,22 @@
-#Section A
-# stops = [ "Croy", "Cumbernauld", "Falkirk High", "Linlithgow", "Livingston", "Haymarket"]
-#
-# stops.push("Edinburgh Waverly")
-# stops.unshift ("Glasgow Queen Street")
-# stops.insert(4, "Polmont")
-# stops.index("Linlithgow")
-# stops.delete("Livingston")
-# stops.delete_at(2)
-# stops.length
-# stops.index("Falkirk High")
-# stops.at(2)
-# stops.reverse
-#
-# for stops in stops
-#   p stops
-# end
+Section A
+stops = [ "Croy", "Cumbernauld", "Falkirk High", "Linlithgow", "Livingston", "Haymarket"]
 
-#Section B
+stops.push("Edinburgh Waverly")
+stops.unshift ("Glasgow Queen Street")
+stops.insert(4, "Polmont")
+stops.index("Linlithgow")
+stops.delete("Livingston")
+stops.delete_at(2)
+stops.length
+stops.index("Falkirk High")
+stops.at(2)
+stops.reverse
+
+for stops in stops
+  p stops
+end
+
+Section B
 users = {
   "Jonathan" => {
     :twitter => "jonnyt",
@@ -72,29 +72,85 @@ users = {
     ]
   }
 }
+# B-1
+users ["Jonathan"][:twitter]
+# B-2
+users ["Erik"][:home_town]
+# B-3
+users ["Erik"][:lottery_numbers]
+# B-4
+users ["Avril"][:pets][0][:species]
+# B-5
+p users ["Erik"][:lottery_numbers].sort[0]
+# B-6
+def even(array)
+  even_array = []
+  for number in array
+    if (number % 2 == 0)
+      even_array.push(number)
+    end
+  end
+  return even_array
+end
 
-# p users ["Jonathan"][:twitter]
-# p users ["Erik"][:home_town]
-# p users ["Erik"][:lottery_numbers]
-# p users ["Avril"][:pets][0][:species]
-# p users ["Erik"][:lottery_numbers].sort[0]
-#
-# def even(array)
-#   even_array = []
-#   for number in array
-#     if (number % 2 == 0)
-#       even_array.push(number)
-#     end
-#   end
-#   return even_array
-# end
-#
-# p even(users["Avril"][:lottery_numbers])
-# p (users["Erik"][:lottery_numbers]).push(7)
+even(users["Avril"][:lottery_numbers])
+# B-7
+(users["Erik"][:lottery_numbers]).push(7)
+# B-8
 (users["Erik"][:home_town] = "Edinburgh")
-p (users["Erik"][:home_town])
-#(users["Erik"][:pets]).push(name: "Fluffy", species: "dog")
-#p (users["Erik"])
+# B-9
+(users["Erik"][:pets]).push(name: "Fluffy", species: "dog")
+# B-10
+users["Paul"] = {
 
-(users)
-#add another person to the users hash
+  :twitter => "none",
+  :home_town => "Glasgow",
+  :pets => "None"
+}
+
+# C
+
+united_kingdom = [
+  {
+    name: "Scotland",
+    population: 5295000,
+    capital: "Edinburgh"
+  },
+  {
+    name: "Wales",
+    population: 3063000,
+    capital: "Swansea"
+  },
+  {
+    name: "England",
+    population: 53010000,
+    capital: "London"
+  }
+]
+# # C-1
+united_kingdom[1][:capital] = "Cardiff"
+# # C-2
+
+united_kingdom.push({
+  name: "Northern Ireland",
+  population: 1811000,
+  capital: "Belfast"
+})
+
+# # C-3
+for countries in united_kingdom
+  p "#{countries[:name]}"
+end
+
+# C-4
+
+def add_populations(countries)
+  total_population = 0
+
+  for population in countries
+    total_population += population[:population]
+  end
+  return total_population
+end
+
+p add_populations(united_kingdom)
