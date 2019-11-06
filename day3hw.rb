@@ -88,3 +88,5 @@ def even(array)
   end
   return even_array
 end
+
+p even(users["Avril"][:lottery_numbers])
