@@ -73,20 +73,28 @@ users = {
   }
 }
 
-p users ["Jonathan"][:twitter]
-p users ["Erik"][:home_town]
-p users ["Erik"][:lottery_numbers]
-p users ["Avril"][:pets][0][:species]
-p users ["Erik"][:lottery_numbers].sort[0]
+# p users ["Jonathan"][:twitter]
+# p users ["Erik"][:home_town]
+# p users ["Erik"][:lottery_numbers]
+# p users ["Avril"][:pets][0][:species]
+# p users ["Erik"][:lottery_numbers].sort[0]
+#
+# def even(array)
+#   even_array = []
+#   for number in array
+#     if (number % 2 == 0)
+#       even_array.push(number)
+#     end
+#   end
+#   return even_array
+# end
+#
+# p even(users["Avril"][:lottery_numbers])
+# p (users["Erik"][:lottery_numbers]).push(7)
+(users["Erik"][:home_town] = "Edinburgh")
+p (users["Erik"][:home_town])
+#(users["Erik"][:pets]).push(name: "Fluffy", species: "dog")
+#p (users["Erik"])
 
-def even(array)
-  even_array = []
-  for number in array
-    if (number % 2 == 0)
-      even_array.push(number)
-    end
-  end
-  return even_array
-end
-
-p even(users["Avril"][:lottery_numbers])
+(users)
+#add another person to the users hash
