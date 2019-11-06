@@ -80,11 +80,11 @@ p users ["Avril"][:pets][0][:species]
 p users ["Erik"][:lottery_numbers].sort[0]
 
 def even(array)
+  even_array = []
   for number in array
-    if (number % 2) == 0
-      p number
+    if (number % 2 == 0)
+      even_array.push(number)
     end
   end
+  return even_array
 end
-
-p even(["Avril"][:lottery_numbers])
