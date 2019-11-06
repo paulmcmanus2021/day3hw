@@ -7,3 +7,10 @@ stops.index("Linlithgow")
 stops.delete("Livingston")
 stops.delete_at(2)
 stops.length
+stops.index("Falkirk High")
+stops.at(2)
+stops.reverse
+
+for stops in stops
+  p stops
+end
